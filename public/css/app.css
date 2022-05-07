@@ -1,0 +1,688 @@
+    /* general setups */
+
+    :root{
+        --nav: #2d394b;
+        --nav-hover: #3f4c5e;
+        /* --body: */
+        --body: rgb(33,37,41);
+        --hamburger: #1a2638;
+        
+        --font-color: #f8f9fa;
+    }
+
+    *{
+        color: var(--font-color);
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: var(--body);
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
+    /* button */
+    .btn{
+        color: var(--font-color);
+        /* width: 100px; */
+        padding: 15px 40px;
+        border-radius: 5px;
+        /* background: var(--hamburger); */
+        /* background: ; */
+        border: solid 2px var(--font-color);
+        text-align: center;
+        margin-bottom: 20px 0; 
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    /* simply cecntrlizing only child of a div */
+    .center-chiled{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* TO display popups in the center and above all */
+    .popup-container{
+
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 50vw;
+        height: 40vh;
+        /* background: var(--font-color); */
+        background: var(--nav);
+        border-radius: 10px;
+
+    }
+    .x-mark-container{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: right;
+        padding-right: 10px;
+        height: 10%;
+        width: 100%;
+        
+    }
+    .x-mark{
+        text-align: center;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+    }
+
+    .margin-b-20{
+        margin-bottom: 20px;
+    }
+    .margin-r-20{
+        margin-right: 20px;
+    }
+    .margin-l-20{
+        margin-left: 20px;
+    }
+    .margin-t-20{
+        margin-top: 20px;
+    }
+
+    table{
+        border-collapse: collapse;
+    }
+    /* !! */
+    @keyframes hamburger-dropdown{
+        from{
+            transform: translateY(-500px);
+        }
+        to{
+            transform: translateY(0px);
+        }
+    }
+    /* end of genral setups */
+    /* nav bar */
+
+    /* Style the navigation menu */
+    .topnav {
+        height: 50px;
+        top:0%;
+        width: 100% ;
+        z-index: 2;
+        background-color: var(--nav);
+    }
+    
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    
+    .topnav #myLinks {
+        overflow: hidden;
+        position: absolute;
+        z-index: 3;
+        height: 100%;
+        width: 100%;
+        display: none;
+        text-align: center;
+        background-color: var(--hamburger);
+        /* transition: <property> <duration> <timing-function> <delay>; */
+        font-weight: bold;
+        -webkit-animation-name: hamburger-dropdown;
+        -webkit-animation-duration: 1.5s;
+        animation-name: hamburger-dropdown;
+        animation-duration: 1.5s;  
+        /* ?? */
+    }
+    #myLinks a,#call-waiter{
+        font-size: 25px;
+        border-bottom: solid 1px ;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        text-align: left;
+        margin-left: 20px;
+    }
+    /* Style navigation menu links */
+    .topnav a, #call-waiter {
+        color: var(--font-color);
+        padding: 14px 16px;
+        text-decoration: none;
+        /* font-size: 17px; */
+        display: block;
+    }
+    #call-waiter a{
+        width:100%;
+        height: 100%;
+    }
+    
+    /* Style the hamburger menu */
+    .topnav a.icon {
+        /* background: black; */
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover, #call-waiter:hover{
+        cursor: pointer;
+        background-color: var(--nav-hover);
+        /* color: black; */
+    }
+    
+    /* Style the active link (or home/logo) */
+    .logo {
+        width: 20%;
+        /* background-color: var(--body); */
+        color: white;
+    }
+
+                /* HOMPAGE */
+
+    .homepage-container{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* SlideShow in homepage */
+    .events , .offers {
+        display: none;
+        height: 100%;
+        width:100%;
+    }
+    /* Slideshow container */
+    /* .slideshow2-container{
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+    }
+    .events2{
+        width: 100vw;
+        height: 100vh;
+    } */
+    .slideshow2-container{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+        margin: -200px;
+    }
+        
+    .slideshow2-container > *{
+        height: 100%; 
+        box-sizing:
+        border-box;
+        overflow: hidden
+
+
+    }
+    .events2 img{
+        height: 100vh;
+        width: 100vw;
+    }
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events img ,.offers img{
+        width: 100%;
+        height:100%
+    }
+    /* The dots/bullets/indicators */
+    .dot {
+
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: 0.4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.4
+        }
+
+        to {
+            opacity: 1    
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+        .prev,
+        .next,
+        .text {
+            font-size: 11px
+        }
+    }
+
+    /* Next & previous buttons */
+    .events-arrows{
+        width:100%;
+        position: absolute;
+        top: 50%;
+    }
+    .offers-arrows{
+        width:100%;
+        position: absolute;
+        top: 50%;
+    }
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute  ;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* hompage sections */
+
+    .homepage-sections-container{
+        margin: 20px 0 ;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .homepage-section{
+        margin: 20px 0px;
+        position: relative;
+        width: 90%;
+        height: 50vh;
+        min-height: 200px;
+        max-width: 500px;
+        min-width: 200px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;  
+        border-radius: 15px;  
+    }
+    .homepage-section-img{
+        width: 100%;      
+        max-width: 500px;
+        min-height: 200px;
+        height: 50vh;
+    }
+    .homepage-section-img img{
+        display: block;
+        min-height: 50vh;
+        min-height: 200px;
+        max-width: 500px;
+
+        border-radius: 15px;
+        height: 100%;
+        width: 100%;
+        background-color: #2d394b;
+        opacity: 0.5;
+
+    }
+    .homepage-section-text{
+        /* font-size: 1rem; */
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5px;
+        height: 95%;
+        width: 100%;
+    }
+    .homepage-section-title {
+        display: flex;
+        flex-direction: column;
+        justify-content:center ;
+        align-items: center;
+    }
+    .homepage-section-title hr{
+        margin-top: 5px;
+        width:70%;
+    }
+    /* hompage offers */
+
+    .offers img{
+        opacity: 0.5;
+    }
+    .offer-text{
+        text-align: center;
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .offer-btn{
+        position: absolute;
+        top: 90%;
+        height: 40px;
+        width: 100px;
+    }
+
+    /* menues */
+
+    /* menue sections */
+
+    /* main container in the menu page */
+    .menus-main-container{
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* sections menues container */
+    .menus-sections{
+        font-size: 24px;
+        font-weight: bold;
+        margin: 30px 0px ;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        /* gap: 20px;   */
+        overflow-x: scroll;
+        /* -ms-overflow-style: none;  Internet Explorer 10+ */
+        /* scrollbar-width: none;  Firefox */
+    }
+    /* sections */
+    .menus-section{
+        background-color: var(--nav);
+        width: 100px ;
+        display: block;
+        text-align: center;
+        border-radius: 5px;
+        flex-shrink: 0;
+        margin-right: 20px;
+
+    }
+    /* items container */
+    .menu-items-container{
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        /* background-color: var(--nav); */
+        padding-bottom: 20px;
+    }
+
+    /* menu items */
+    .menu-item{
+        font-size: 1.1rem;
+        max-width: 400px;
+        background-color: var(--nav);
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding-bottom: 20px;
+    }
+
+    /* menue image container for the item  */
+    .menu-item-img{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 50%;
+        margin-bottom: 30px;
+    }
+
+    /* item image */
+    .menu-item-img img{
+    
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* item info */
+    .menu-item-info{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    /* title and price container */
+    .menu-title-price{
+        width: 100%;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:  30px;
+    }
+
+    
+
+    /************** CART ****************/
+
+    /* main container */
+    .cart-main-container{
+        margin-top: 20px;
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .cart-item{
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        background: var(--nav);
+        padding: 10px
+    }
+
+    .cart-img-title{
+        width: 50%;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    }
+    .cart-img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    .cart-img img{
+        
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    .cart-title-subprice h2{
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+    .cart-input-price{
+        
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cart-input-container{
+        color: var(--nav);
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .cart-input-container input{
+        width: 50px;
+        color: var(--nav);
+        height: 30px;
+        margin: 5px;
+        text-align: center;
+    }
+    .input-btn{
+        border-radius: 50%;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        background-color: var(--font-color);
+        color: var(--nav);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    /********************** waiters popup **********************/
+
+    /* waiters main container */
+    .waiters-container{
+        display: none;
+
+        /* display: flex; */
+        flex-direction: column;
+        align-items: center;
+
+        width: 300px;
+        height: 300px;
+        border: 0.5px solid var(--font-color);
+    }
+    /* waiters title */
+    .waiters-container h1{
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--font-color);
+        padding-bottom: 15px;
+    }
+    /* waiters byuttons container */
+    .waiters{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .pop-btn{
+
+        font-size: 20px;
+        font-weight: bold;
+        width: 130px;
+        padding: 15px 0;
+        text-align: center;
+        color: #1a2638; 
+        background-color: var(--font-color);
+        background-image: linear-gradient(var(--font-color) 50%,var(--nav-hover) 100%);
+        vertical-align: center;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border: 1px solid var(--nav);
+    }
+
+    /********************** BILL ******************************/
+    .bill-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: fit-content;
+        padding: 20px 0;
+    }
+
+    .bill-table{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 15px;
+        height: fit-content;
+    }
+
+        th , td{
+        background-color: white;
+            color: var(--nav);
+            padding:10px;
+            border: 1px solid var(--nav);
+        }
